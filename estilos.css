@@ -1,0 +1,254 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    height: 100%;
+}
+body{
+    font-family: 'Merriweather', serif;
+    font-size: 20px;
+    min-height: 100%; 
+}
+.contenedor{
+    display: grid;
+    grid-template:
+    "header" 100px
+    "navbar" 50px
+    "main"  auto
+    "footer" 100px;
+	row-gap: 3em;
+}
+.header{
+    grid-area: header;
+    background-color: #FFE0E0;
+	height: 200px;
+}
+.logo{
+    display: grid;
+	justify-content: center;
+	margin-top: 20px;
+}
+.navbar{
+    grid-area: navbar;
+    background-color: #FFE0E0;
+	text-align: center;
+	height: 75px;
+}
+a{ 
+    text-decoration: none;
+	color: #B10A73;
+	font-family: 'Poppins', sans-serif;
+}
+nav ul li a:hover {
+    color: white;
+}
+.navegacion li{
+	border: 1px white solid;
+	width: 100%;
+	line-height: 20ppx;
+	font-weight: bolder;
+}
+.main{
+    grid-area: main;
+	display: grid;
+}
+.titulo1{
+    display: grid;
+    color: #B10A73;
+	font-size: 25px;
+	text-align: center;
+	margin-top: 1em;
+	font-weight:bolder;
+}
+.principal{
+    grid-area: main;
+	margin-top: 3rem;
+	display: grid;
+	justify-content: center;
+}
+.textnro1{
+    grid-area: main;
+	font-family: 'Poppins', sans-serif;
+    display: grid;
+	background-color: #B10A73;
+	color: white;
+	padding: 1em;
+}
+.textonro2{
+	grid-area: main;
+	background-color: #FFE0E0;
+	font-family: 'Merriweather', serif;
+	font-size: 25px;
+	color: #B10A73;
+	font-weight: bolder;
+	text-align: center;
+	padding: 1rem;
+	margin-top: 10px;
+	margin-bottom: 4rem;
+}
+.parte1{
+	margin-top: 2rem;
+	margin-bottom: 2rem;
+}
+.parte2{
+	grid-area: main;
+	text-align: center;
+}
+.fiesta{
+	width: 80%;
+	height: 90%;
+}
+h4{
+	text-align: center;
+	font-family: 'Poppins', sans-serif;
+	font-size: 20px;
+	color:#B10A73;
+	padding-top: 1rem;
+	padding-bottom: 3rem;
+}
+.footer{
+    grid-area: footer;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+    background-color: #FFE0E0;
+	font-family: 'Poppins', sans-serif;
+}
+.politica{
+	font-size: 15px;
+	padding-left: 2rem;
+	padding-bottom: 1rem;
+	padding-top: 1rem;
+	color:#677094;
+}
+.redes{
+	display: flex;
+	padding-right: 2rem;
+	height: 30px;
+}
+
+
+@media (min-width: 768px) {
+	.contenedor{
+		display: grid;
+		grid-template-areas: 
+		"header     header  header"      
+		"navbar 	navbar 	navbar"
+        "main       main    main"       
+        "footer     footer  footer";
+		}
+		
+		.header{
+			grid-area: header;
+			grid-column: 1/span 3;
+		}
+		.navbar{
+			grid-area: navbar;
+			grid-column: 1/span 3;
+		}
+		.parte1{
+			grid-area: main;
+			display: grid;
+		}
+		.parte2{
+			grid-area: main;
+			display: grid;
+			grid-template:
+			"textonro2	 textonro2	textonro2"
+			;
+		}
+		.fiesta{
+			width: initial;
+			height: initial;
+			margin: 1rem;
+		}
+		h4{
+			font-size: 15px;
+		}
+		.textnro1{
+			grid-area: parte1;
+			display: grid;
+			grid-column: span 2;
+			margin-left: 5px;
+		}
+		.textonro2{
+			margin-top: 2rem;
+		}
+		.principal{
+			grid-area: main;
+			display: grid;
+			margin-left: 5px;
+		}
+		.footer{
+			grid-area: footer;
+		}
+}
+
+@media (min-width: 992px){
+	.contenedor{
+        display: grid;
+        grid-template-areas: 
+        "header     header  navbar"     
+        "main       main    main"       
+        "footer     footer  footer"		
+		;
+		grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 120px auto 100px;
+		}
+
+		.header{
+            grid-area: header;
+            height: 150px;
+        }
+        .logo{
+            display: grid;
+            margin-left: 55px;
+            justify-content: start;
+        }
+		.navbar{
+            grid-area: navbar;
+            text-align: center;
+            height: 150px;
+        }
+        nav ul li{
+            display: inline-block;
+            font-weight: bolder;
+        }
+        .navegacion li{
+            border: none;
+        }
+        .navegacion{
+            grid-area: navbar;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            margin-top: 55px;
+            margin-right: 55px;
+        }
+		.titulo1{
+            display: grid;
+            text-align: start;
+            margin-left: 5%;
+        }
+		.textnro1{
+			margin-left: 10px;
+		}
+		.principal{
+			margin-left: 50px;
+			margin-top: 10px;
+		}
+		.textonro2{
+            text-align: start;
+            margin-left: 3rem;
+            width: max-content;
+        }
+		.h4{
+            font-size: 18px;
+        }
+}
